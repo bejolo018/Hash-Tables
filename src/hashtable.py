@@ -1,6 +1,7 @@
 # '''
 # Linked List hash table key/value pair
 # '''
+# comment for initial commit to see if pycharm is working
 class LinkedPair:
     def __init__(self, key, value):
         self.key = key
