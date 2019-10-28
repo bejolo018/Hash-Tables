@@ -86,7 +86,6 @@ class HashTable:
         '''
         self.capacity *= 2
         new_storage = [None] * self.capacity
-        copy = self.storage
         self.storage = new_storage
 
 
