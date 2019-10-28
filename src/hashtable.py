@@ -1,7 +1,6 @@
 # '''
 # Linked List hash table key/value pair
 # '''
-
 class LinkedPair:
     def __init__(self, key, value):
         self.key = key
@@ -85,8 +84,10 @@ class HashTable:
 
         Fill this in.
         '''
-        pass
-
+        self.capacity *= 2
+        new_storage = [None] * self.capacity
+        copy = self.storage
+        self.storage = new_storage
 
 
 if __name__ == "__main__":
