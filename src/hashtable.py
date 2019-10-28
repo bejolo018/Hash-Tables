@@ -1,7 +1,7 @@
 # '''
 # Linked List hash table key/value pair
 # '''
-# comment for initial commit to see if pycharm is working
+
 class LinkedPair:
     def __init__(self, key, value):
         self.key = key
@@ -52,7 +52,13 @@ class HashTable:
 
         Fill this in.
         '''
-        pass
+        index = self._hash_mod(key)
+
+        if self.storage[index] is not None:
+            print("Warning: Index Collision")
+            return
+
+        self.storage[index] = value
 
 
 
@@ -64,7 +70,13 @@ class HashTable:
 
         Fill this in.
         '''
-        pass
+        index = self._hash_mod(key)
+
+        if self.storage[index] is None:
+            print("Warning: Key not found")
+            return
+
+        self.storage[index] = None
 
 
     def retrieve(self, key):
