@@ -131,8 +131,15 @@ class HashTable:
         '''
         self.capacity *= 2
         new_storage = [None] * self.capacity
+        intact = self.storage
         self.storage = new_storage
 
+        for pair in intact:
+            if pair is not None:
+                current_pair = pair
+                while current_pair is not None:
+                    self.insert(current_pair.key, current_pair.value)
+                    current_pair = current_pair.next
 
 if __name__ == "__main__":
     ht = HashTable(2)
